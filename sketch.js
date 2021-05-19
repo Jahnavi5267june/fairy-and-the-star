@@ -26,7 +26,7 @@ function setup() {
     fairyVoice.play();
 
 	//create fairy sprite and add animation for fairy
-      fairy=createSprite(150,220);
+      fairy=createSprite(130,520);
 	  fairy.addAnimation("flying fairy",fairyImg);
 	  fairy.scale=0.24;
 
@@ -55,6 +55,9 @@ function draw() {
   console.log(star.y);
 
   //write code to stop star in the hand of fairy
+	if (star.y > 470 && starBody.position.y>470) {
+		Matter.Body.setStatic(starBody,true);
+	}
 
   drawSprites();
 
